@@ -1,0 +1,10 @@
+{
+    "name": "iteraction/php",
+    "description": "interaction-php",
+    "authors": [
+        {
+            "name": "Drobot Alexandr"
+        }
+    ],
+    "require": {}
+}

@@ -5,7 +5,7 @@ include_once 'interaction/boot/boot.php';
 
 # API container
 Interaction\Boot\Loader::container(function () {
-    Interaction\Http\Api::load('/base/');
+    Interaction\Http\Api::load('/');
 });
 
 # Front-container
