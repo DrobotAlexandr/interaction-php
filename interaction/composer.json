@@ -1,0 +1,22 @@
+{
+  "name": "interaction/php",
+  "description": "Interaction",
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Drobot Alexandr"
+    }
+  ],
+  "require-dev": {
+    "pestphp/pest": "^1.23"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  }
+}
