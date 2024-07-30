@@ -11,8 +11,3 @@ require __DIR__ . '/../classes/Interaction/Boot/Loader.php';
 \Interaction\Boot\Loader::container(function () {
     Interaction\Boot\Loader::loadFunctions();
 });
-
-# Composer
-\Interaction\Boot\Loader::container(function () {
-    Interaction\Boot\Loader::loadVendor();
-});

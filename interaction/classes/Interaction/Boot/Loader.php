@@ -35,13 +35,6 @@ class Loader
 
     }
 
-    public static function loadVendor(): void
-    {
-        if (file_exists(__DIR__ . '/../../../vendor/autoload.php')) {
-            require_once __DIR__ . '/../../../vendor/autoload.php';
-        }
-    }
-
     public static function loadFunctions(): void
     {
         foreach (scandir(__DIR__ . '/../../../functions') as $file) {
