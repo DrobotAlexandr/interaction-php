@@ -7,6 +7,9 @@ class Api
 
     public static function load(string $basePath): void
     {
+        if (!isset($_SERVER['REQUEST_URI'])) {
+            return;
+        }
 
         if (!str_contains($_SERVER['REQUEST_URI'], '/api/')) {
             return;
@@ -29,6 +32,10 @@ class Api
 
     private static function getEndPointFilePath(string $basePath): string
     {
+        if (!isset($_SERVER['REQUEST_URI'])) {
+            return '';
+        }
+
         $methodPath = strtr(__DIR__ . '/../../../app/' . explode('?', $_SERVER['REQUEST_URI'])[0], ['//' => '/']);
 
         $methodPath = strtr($methodPath, [$basePath => '/']) . '.php';

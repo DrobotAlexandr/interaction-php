@@ -7,6 +7,7 @@ class FrontController
 
     public static function index(): void
     {
+
     }
 
 }
