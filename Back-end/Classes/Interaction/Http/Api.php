@@ -49,15 +49,18 @@ class Api
 
     public static function runMethod($callback): void
     {
-        $res = $callback();
-
-        if (!$res) {
-            $res = [];
+        try {
+            Response::json(
+                $callback()
+            );
+        } catch (\Throwable $e) {
+            Response::json(
+                Response::error(
+                    $e->getMessage(),
+                    $e->getCode()
+                )
+            );
         }
-
-        Response::json(
-            $res
-        );
     }
 
     private static function includeCORS(string $endpointPath): void

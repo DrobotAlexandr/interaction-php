@@ -1,7 +1,7 @@
 <?php
 
 # Boot Loader
-include_once 'Interaction/Boot/Boot.php';
+include_once 'Back-end/Boot/Boot.php';
 
 # API container
 Interaction\Boot\Loader::container(function () {
