@@ -27,25 +27,18 @@ class Loader
             return;
         }
 
-        $classPath = strtr(__DIR__ . '/../../../app/' . strtr($className, ['\\' => '/', 'App\\' => '']) . '.php',
-            [
-                '/app/Services/' => '/app/services/',
-                '/app/Models/' => '/app/models/',
-                '/app/Controllers/' => '/app/controllers/',
-            ]
-        );
+        $classPath = __DIR__ . '/../../../App/' . strtr($className, ['\\' => '/', 'App\\' => '']) . '.php';
 
         if (file_exists($classPath) and !class_exists($className)) {
             require $classPath;
         }
-
     }
 
     public static function loadFunctions(): void
     {
-        foreach (scandir(__DIR__ . '/../../../functions') as $file) {
+        foreach (scandir(__DIR__ . '/../../../Functions') as $file) {
             if (str_contains($file, '.php')) {
-                require __DIR__ . '/../../../functions/' . $file;
+                require __DIR__ . '/../../../Functions/' . $file;
             }
         }
     }

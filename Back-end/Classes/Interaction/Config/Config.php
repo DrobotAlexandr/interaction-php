@@ -8,8 +8,8 @@ class Config
     {
         $config = [];
 
-        if (file_exists(__DIR__ . '/../../../app/config/' . $configName . '.php')) {
-            $config = include __DIR__ . '/../../../app/config/' . $configName . '.php';
+        if (file_exists(__DIR__ . '/../../../App/Config/' . $configName . '.php')) {
+            $config = include __DIR__ . '/../../../App/Config/' . $configName . '.php';
         }
 
         if ($key) {

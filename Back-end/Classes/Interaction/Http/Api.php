@@ -16,7 +16,6 @@ class Api
         }
 
         if ($methodPath = self::getEndPointFilePath($basePath)) {
-
             self::includeCORS($methodPath);
             self::includeGuard($methodPath);
 
@@ -36,9 +35,9 @@ class Api
             return '';
         }
 
-        $methodPath = strtr(__DIR__ . '/../../../app/' . explode('?', $_SERVER['REQUEST_URI'])[0], ['//' => '/']);
+        $methodPath = strtr(__DIR__ . '/../../../App/' . explode('?', $_SERVER['REQUEST_URI'])[0], ['//' => '/']);
 
-        $methodPath = strtr($methodPath, ['/app' . $basePath . 'api/' => '/app/api/']) . '.php';
+        $methodPath = strtr($methodPath, ['/App' . $basePath . 'Api/' => '/App/Api/']) . '.php';
         $methodPath = strtr($methodPath, ['/.php' => '.php']);
 
         if (file_exists($methodPath)) {

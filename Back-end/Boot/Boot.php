@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/../classes/Interaction/Boot/Loader.php';
+require __DIR__ . '/../Classes/Interaction/Boot/Loader.php';
 
 # Classes
 \Interaction\Boot\Loader::container(function () {
