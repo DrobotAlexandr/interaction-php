@@ -37,8 +37,8 @@ class Api
 
         $methodPath = strtr(__DIR__ . '/../../../App/' . explode('?', $_SERVER['REQUEST_URI'])[0], ['//' => '/']);
 
-        $methodPath = strtr($methodPath, ['/App' . $basePath . 'Api/' => '/App/Api/']) . '.php';
-        $methodPath = strtr($methodPath, ['/.php' => '.php']);
+        $methodPath = strtr($methodPath, ['/App' . $basePath . 'api/' => '/App/api/']) . '.php';
+        $methodPath = strtr($methodPath, ['/App/api/' => '/App/Api/', '/.php' => '.php']);
 
         if (file_exists($methodPath)) {
             return $methodPath;
